@@ -1,0 +1,56 @@
+---
+title: "My R Markdown Primer"
+author: "Gabriel Myles"
+output: html_document
+---
+
+# Introduction
+
+This document demonstrates the basics of R Markdown, including text formatting, embedded R code, and simple LaTeX math. R Markdown allows you to mix narrative text and code in a single reproducible document.
+
+R Markdown documents use markdown syntax for formatting. You can include **bold text**, *italics*, lists, headers, and more.
+
+# Narrative Section
+
+R Markdown helps combine analysis and explanation. Instead of writing your report separately from your code, everything stays in one place and updates automatically when you knit the document.
+
+# Math Example
+
+Here is an inline math expression: $\alpha + \beta = \gamma$.
+
+And here is a displayed equation:
+
+$$
+x = y^2 + 3y + 2
+$$
+
+# Code Chunks
+
+Below are examples of executable R code chunks.
+
+## Chunk 1: Load a Dataset
+
+```{r}
+data(iris)
+head(iris)
+```
+
+## Chunk 2: Simple Summary
+
+```{r}
+summary(iris$Sepal.Length)
+```
+
+## Chunk 3: Plot (ggplot2)
+
+```{r}
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  theme_minimal()
+```
+
+# Conclusion
+
+Using R Markdown makes it easy to produce clean, reproducible reports that include text, code, results, and graphics. Compared to writing a plain report, this workflow saves time and reduces errors because the output updates automatically whenever the code changes.
